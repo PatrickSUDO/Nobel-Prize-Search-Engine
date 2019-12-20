@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name ="viewpoint" content="width=divice-width, initial-scale=1" />
+        <title>Nobel Prize</title>
+        <link rel="stylesheet" href="nobel.css" type="text/css"/>
+    </head>
+    <body onload="load()">
+        <div id="picture">
+            <div class="search_header">
+			 <h1 style="font-size:40px;";>Nobel Prize Winners</h1>
+			 <h2>Search Options</h2>
+		    </div>
+                <ul>
+                    <li id ="yearRange"><h3 style="color:white;";>Year Range</h3>
+                        <p style="display: inline-block; color:white;" >From:</p>
+                        <input type="numbers" id="from"; placeholder='start' onfocus="this.value=''">
+				        <p style="display: inline-block; color:white;">To:</p>
+                            <input type="numbers" id="to" placeholder='end' onfocus="this.value=''">
+                    <li><h3 style="color:white;";>Choose a category</h3>
+                        <form id ="droplist" onChange="getCat(this.selectedIndex);"></form><p id="choice" hidden=""></p></li>
+                </ul>
+                <div>
+				    <input id="submitButton" type="submit" value="Submit" onclick="displayTable()">
+			    </div>
+        </div>
+        <div id="showArea">
+				<h2 id="resultTitle">Result:</h2>
+                 <div id="genderFilter" style="display: none">
+                <h3>Gender</h3><form id="gender_button">
+						<input type="radio" onclick="genderSel()" id="male" value="male" name="gender" >Male
+                        <input type="radio" onclick="genderSel()" id="female" value="female" name="gender">Female
+						<input type="radio" onclick="genderSel()"  id="both" value="both" name="gender" checked>Both
+			     </form>
+                <br>
+                </div>
+        </div>
+                <div id="results"></div>
+        <script src="function.js"></script>
+    </body>
+</html>
+    
